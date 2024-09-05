@@ -13,7 +13,7 @@ services:
     #  - 5432:5432
     # Comment out `networks` section below if you want to expose ports
     networks:
-      kobo-be-network:
+      kobo-gisc-be-network:
         aliases:
           - postgres.kobo.private
 
@@ -25,7 +25,7 @@ services:
     #  - 27017:27017
     # Comment out section below if you want to expose ports
     networks:
-      kobo-be-network:
+      kobo-gisc-be-network:
         aliases:
           - mongo.kobo.private
 
@@ -42,7 +42,7 @@ services:
     #  - 6379:6379
     # Comment out `networks` section below if you want to expose ports
     networks:
-      kobo-be-network:
+      kobo-gisc-be-network:
         aliases:
           - redis-main.kobo.private
 
@@ -57,11 +57,11 @@ services:
     #  - 6380:6380
     # Comment out `networks` section below if you want to expose ports
     networks:
-      kobo-be-network:
+      kobo-gisc-be-network:
         aliases:
           - redis-cache.kobo.private
 
 # Comment out section below if you want to expose ports
 networks:
-  kobo-be-network:
+  kobo-gisc-be-network:
     driver: bridge

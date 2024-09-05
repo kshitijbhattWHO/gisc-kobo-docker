@@ -36,7 +36,7 @@ services:
       - ./scripts/runtime_variables_kobocat.source.bash:/etc/profile.d/runtime_variables_kobocat.source.bash.sh:ro
     restart: always
     networks:
-      kobo-fe-network:
+      kobo-gisc-fe-network:
         aliases:
           - kobocat
           - kobocat.docker.container
@@ -75,7 +75,7 @@ services:
       - ./.vols/kobocat_media_uploads:/srv/src/kobocat/media
     restart: always
     networks:
-      kobo-fe-network:
+      kobo-gisc-fe-network:
         aliases:
           - kpi
           - kpi.docker.container
@@ -102,7 +102,7 @@ services:
         - ./nginx/kobo-docker-scripts/:/kobo-docker-scripts
     restart: always
     networks:
-      kobo-fe-network:
+      kobo-gisc-fe-network:
         aliases:
           - nginx
           - nginx.internal
@@ -115,11 +115,11 @@ services:
     volumes:
       - ../kobo-env/enketo_express/config.json:/srv/src/enketo_express/config/config.json
     networks:
-      kobo-fe-network:
+      kobo-gisc-fe-network:
         aliases:
           - enketo_express
           - enketo_express.internal
 
 networks:
-  kobo-fe-network:
+  kobo-gisc-fe-network:
     driver: bridge
