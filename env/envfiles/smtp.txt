@@ -7,10 +7,10 @@
 # See https://docs.djangoproject.com/en/1.8/topics/email/#smtp-backend.
 
 # SMTP server settings
-SMTP_HOST=mailer.kobo.private            # Use the new alias for the mail server
-SMTP_PORT=25                             # Port 25 for unencrypted SMTP
-SMTP_USER=noreply@kobo.gischealth.org    # Dummy user (if needed)
-SMTP_PASSWORD=dummypassword              # Dummy password (since it can't be left blank)
-SMTP_USE_TLS=False                       # Disable TLS
-SMTP_USE_SSL=False                       # Disable SSL
-DEFAULT_FROM_EMAIL=noreply@kobo.gischealth.org  # Set the default sender email address
+EMAIL_BACKEND=django.core.mail.backends.smtp.EmailBackend
+EMAIL_HOST=mailer.kobo.private         # The alias you created for the mail server
+EMAIL_PORT=25                          # Use port 25 for unencrypted SMTP
+EMAIL_HOST_USER=noreply@kobo.gischealth.org  # Use dummy credentials if needed
+EMAIL_HOST_PASSWORD=dummypassword      # Dummy password since the field can't be blank
+EMAIL_USE_TLS=False                    # Disable TLS since you're using port 25
+DEFAULT_FROM_EMAIL=noreply@kobo.gischealth.org  # The email address used in the From field
