@@ -15,7 +15,7 @@ rm -rf /etc/nginx/conf.d/*
 
 templated_var_refs="${TEMPLATED_VAR_REFS}"
 declare -A container_ports
-container_ports=( ['kpi']='8000' ['kobocat']='8001' )
+container_ports=( ['kpi']='8000' ['kobocat']='8001' ['gisc_kobo_mailer']='465' )
 
 if [ "${NGINX_PUBLIC_PORT:-80}" != "80" ]; then
     export container_public_port=":${NGINX_PUBLIC_PORT}"
